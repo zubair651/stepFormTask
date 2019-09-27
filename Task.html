@@ -1,0 +1,430 @@
+<!doctype html>
+<html lang="en">
+	<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+	
+	<link href="https://weareoutman.github.io/clockpicker/dist/bootstrap-clockpicker.min.css"rel="stylesheet">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" href="taskStyle.css">
+    <title>Task!</title>
+  </head>
+  <body>
+		<!-- Optional JavaScript -->
+		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+		
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.js"></script>
+		<script src="https://weareoutman.github.io/clockpicker/dist/bootstrap-clockpicker.min.js"></script>
+
+		<!-- MultiStep Form -->
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<form id="msform">
+						<!-- progressbar -->
+						<div class="row">
+							<div class="col-md-2">
+								<ul id="progressbar">
+									<li class="active"></li>
+									<li></li>
+								</ul>
+							</div>
+							
+							<!-- fieldsets -->
+							<div class="col-md-8">
+								<fieldset>
+								
+										<div class="row">
+											<div class="col-md-8">
+												<span class="custom-color-gray-light-v2">To Send your Package</span>
+												<h3 class="custom-color-black-v1"><b>Choose Your Location</b></h3>
+											</div>
+										</div>
+										<p class="p-border">
+											<label class="label-text">Enter PickUP</label>
+											<input class="input-border" type="search" name="q" placeholder="Origin"/>
+										</p>
+										<p class="p-border">
+											<label class="label-text">Enter DropOff</label>
+											<input class="input-border" name="q" placeholder="Destination" type="search"/>
+										</p>
+										<input type="button" name="next" class="next action-button nxt-btn" value="Next"/>
+                                    
+                                	</fieldset>	
+                                    <fieldset>									
+									
+										<div class="row">
+											<div class="col-md-8 packege-txt">
+												<span class="custom-color-gray-light-v2">To Send your Package</span>
+												<h3 class="custom-color-black-v1"><b>Select Your Courier Size</b></h3>
+											</div>
+										</div>
+										<div class="row" style="justify-content: space-evenly">
+											<div class="col-md-8">
+												<input type="button" name="S" class="size-button actives btn-s" value="S"/>
+												<input type="button" name="M" class="size-button btn-s" value="M"/>
+												<input type="button" name="L" class="size-button btn-s" value="L"/>
+												<input type="button" name="XL" class="size-button btn-xl" value="XL"/>
+											</div>
+										</div>
+										<div class="sm-md-lg">
+											<div class="row">
+												<div class="col-md-12" style="margin-bottom: 14px">
+													<a class="send-multiple" href="#">Send Multiple</a>
+												</div>
+											</div>
+											<div class="row show">
+												<div class="col-md-4">
+													<div class="small-size-text">
+														<span class="bold-text-0 num-count bg-clr-sm" data-name='S'>0</span>
+                                                        <p class="bold-text-0 num-count bg-clr-sm">SMALL</p>														
+													</div>													 
+												</div>
+												<div class="col-md-4">
+													<div class="medium-size-text">
+														<span class="bold-text-0 num-count bg-clr-md" data-name='M'>0</span>
+														<p class="bold-text-0 num-count bg-clr-md">MEDIUM</p>
+													</div>
+												</div>
+												<div class="col-md-4">
+													<div class="large-size-text">
+														<span class="bold-text-0 num-count bg-clr-lg" input data-name='L'>0</span>
+														<p class="bold-text-0 num-count bg-clr-lg">LARGE</p>
+													</div>
+												</div>												
+												<button class="button dec"><span class="fa fa-minus"></span></button>
+												<button class="button inc"><span class="fa fa-plus"></span></button>
+											</div>
+											<div class="row">
+												<div class="col-md-12" style="margin-top: 70px">
+													<input class="picklater-btn pick-btn" type="button" name="Pick Now" class="size-button" value="Pick Now"/>
+													<input class="picklater-btn activ pickdateclock" type="button" name="Pick Later" class="size-button" value="Pick Later"/>
+												</div>
+											</div>
+											<div class="row datepickShow">
+												<div class="col-md-6">
+													<div id="datepicker" class="input-group date" data-date-format="mm-dd-yyyy">
+														<input class="form-control date-input" type="text" readonly />
+														<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+													</div>
+												</div>
+												
+												<div class="col-md-6">
+													<div class="input-group clockpicker">
+														<input type="text" id="releasetime" name="releasetime" class="form-control clock-input" value="00:00">
+														<span class="span-clock">
+															<i class="material-icons">access_time</i>
+														</span>
+													</div>
+												</div>
+											</div>
+											<div class="row current-clock">
+												<div class="col-md-6">
+													<div class="input-group clock-now">
+														<input type="time" class="form-control" disabled="disabled" value='now'/>
+														<span class="input-group-addon"><i class="material-icons" style="margin-top:8px;">access_time</i></span>
+													</div>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-md-6">
+													<div class="weight-div">
+														<div class="weight-icon"><i class="fa fa-calendar" style="color: #E36497;"></i></div>
+														<span class="weight-text"><b>15</b></span>
+														<span class="weight-kg">(Kg)</span>												
+													</div>
+												</div>
+												<div class="col-md-6">
+													<div class="">
+														<div class="weight-icon"><i class="fa fa-calculator"></i></div>
+														<span class="weight-text">48 <i class="fa fa-close"></i> 48 <i class="fa fa-close"></i> 48</span>
+														<p class="weight-kg">L.W.H(CM)</p>
+													</div>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-md-12">
+													<input style="width:160px" type="button" name="login" class="action-button" value="$00.00 | Login"/>
+												</div>
+											</div>
+										</div>
+										<div class="row xl-form" style="display:none;">
+											<div class="col-md-12">
+												<div class="row">
+													<div class="col-md-5">
+														<div class="form-group">
+															<label class="XL-label" style="margin-left: 44px;">Weight (KG)</label>
+															<input class="XL-input" name="weight" placeholder="10" type="text"/>
+														</div>
+													</div>
+													<div class="col-md-6">
+														<div class="form-group">
+															<label class="XL-label">Length (CM)</label>
+															<input class="XL-input" name="Length" placeholder="10" type="text"/>
+														</div>
+													</div>
+												</div>
+												<div class="row">
+													<div class="col-md-5">
+														<div class="form-group">
+															<label class="XL-label" style="margin-left: 44px;">Width (KG)</label>
+															<input class="XL-input" name="width" placeholder="10" type="text"/>
+														</div>
+													</div>
+													<div class="col-md-6">
+														<div class="form-group">
+															<label class="XL-label">Height (CM)</label>
+															<input class="XL-input" name="height" placeholder="10" type="text"/>
+														</div>
+													</div>
+												</div>
+												<div class="row">
+													<div class="col-md-6">
+														<div id="datepicker" class="input-group date" data-date-format="mm-dd-yyyy" style="width:197px;margin-left:81px;">
+															<input class="form-control date-input" type="text" readonly />
+															<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+														</div>
+													</div>
+													<div class="col-md-6">
+														<div class="input-group clockpicker-xl">
+															<input type="text" id="releasetime" name="releasetime" class="form-control clock-input" value="00:00">
+															<span class="span-clock">
+																<i class="material-icons" style="margin-top: 0px;">access_time</i>
+															</span>
+														</div>
+													</div>
+												</div>
+												<div class="row">
+													<div class="col-md-12" style="width:117px; margin-left:30px">
+														<input type="Submit" name="submit" class="action-button" value="Submit"/>
+													</div>
+												</div>
+											</div>
+										</div>
+										
+										<button type="button" name="previous" class="previous action-button-previous prev-btn"><i class="fa fa-arrow-left" aria-hidden="true"></i></button>
+									</fieldset>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</body>
+<script>
+		
+var current_fs, next_fs, previous_fs; 
+var left, opacity, scale; 
+var animating; 
+
+$(".button").on("click", function(event) {
+event.preventDefault();
+  var $button = $(this);
+  var $active = $('.size-button.actives').attr('name');
+  var oldValue = $button.parent().find("span[data-name='"+$active+"']").text();
+  $button.blur();
+  if ($button.hasClass("inc")) {
+	  var newVal = parseFloat(oldValue) + 1;
+	} else {
+   // Don't allow decrementing below zero
+    if (oldValue > 0) {
+      var newVal = parseFloat(oldValue) - 1;
+    } else {
+      newVal = 0;
+    }
+  }
+
+  $button.parent().find("span[data-name='"+$active+"']").text(newVal);
+
+});
+
+
+$(".next").click(function(){
+	if(animating) return false;
+	animating = true;
+	
+	current_fs = $(this).parent();
+	next_fs = $(this).parent().next();
+	
+	$("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
+	
+	next_fs.show(); 
+	current_fs.animate({opacity: 0}, {
+		step: function(now, mx) {
+			scale = 1 - (1 - now) * 0.2;
+			left = (now * 50)+"%";
+			opacity = 1 - now;
+			current_fs.css({
+			'transform': 'scale('+scale+')',
+			'position': 'absolute'
+		});
+			next_fs.css({'left': left, 'opacity': opacity});
+		}, 
+		duration: 800, 
+		complete: function(){
+			current_fs.hide();
+			animating = false;
+		}, 
+		easing: 'easeInOutBack'
+	});
+});
+
+$(".previous").click(function(){
+	if(animating) return false;
+	animating = true;
+	
+	current_fs = $(this).parent();
+	previous_fs = $(this).parent().prev();
+	
+	$("#progressbar li").eq($("fieldset").index(current_fs)).removeClass("active");
+	
+	previous_fs.show(); 
+	current_fs.animate({opacity: 0}, {
+		step: function(now, mx) {
+			scale = 0.8 + (1 - now) * 0.2;
+			left = ((1-now) * 50)+"%";
+			opacity = 1 - now;
+			current_fs.css({'left': left});
+			previous_fs.css({'transform': 'scale('+scale+')', 'opacity': opacity});
+		}, 
+		duration: 800, 
+		complete: function(){
+			current_fs.hide();
+			animating = false;
+		}, 
+		easing: 'easeInOutBack'
+	});
+});
+
+
+ $(".size-button").click(function(){
+    $(".size-button").removeClass("actives");
+	$(this).addClass("actives");
+  });
+  
+   $(".picklater-btn").click(function(){
+    $(".picklater-btn").removeClass("activ");
+	$(this).addClass("activ");
+  });
+  
+  $(".nxt-btn").click(function(){
+    $(".step2").show();
+	$(".step1").show();
+  });
+  
+  $(".prev-btn").click(function(){
+    $(".step1").show();
+    $(".step2").hide();
+  });
+
+  $(".btn-s").click(function(){
+    $(".xl-form").hide();
+    $(".sm-md-lg").show();
+	$(".prev-btn").show();
+  });
+  $(".btn-xl").click(function(){
+    $(".xl-form").show();
+    $(".sm-md-lg").hide();
+	$(".prev-btn").hide();
+  });
+
+
+$(".send-multiple").click(function(){
+    $(".show").toggle();
+  });
+  
+  $(".pickdateclock").click(function(){
+    $(".current-clock").hide();
+    $(".datepickShow").show();
+  });
+  $(".pick-btn").click(function(){
+    $(".current-clock").show();
+	var d = new Date(),        
+      h = d.getHours(),
+      m = d.getMinutes();
+	if(h < 10) h = '0' + h; 
+	if(m < 10) m = '0' + m; 
+	$('input[type="time"][value="now"]').each(function(){ 
+		$(this).attr({'value': h + ':' + m});
+	});
+    $(".datepickShow").hide();
+  });
+  $(".action-button").click(function(){
+    $(".current-clock").css("display" , "none");
+  });
+  
+$(function () {
+  $("#datepicker").datepicker({ 
+        autoclose: true, 
+        todayHighlight: true
+  }).datepicker('update', new Date());
+});
+
+ var now = new Date();
+  $("#releasetime").val(getTimeString(now));
+  $("#releasetime").clockpicker({
+    donetext: 'Okay',
+    autoclose:true
+  });
+  
+  $("input#releasetime").change(function(e){
+    e.preventDefault();
+    var timestr = $(this).val();
+    var now = new Date();
+    if(!isValidTimeString(timestr)){
+      $(this).val(getTimeString(now));
+    }
+    var release = new Date();
+    release.setHours(parseInt(timestr.split(":")[0]));
+    release.setMinutes(parseInt(timestr.split(":")[1]));
+    release.setSeconds(0);
+  });
+  
+  $(".input-group.clockpicker").click(function(e){
+    e.stopPropagation();
+    $("#releasetime").clockpicker('show');
+  });
+  
+  $("input#releasetime").trigger("change");
+  
+  setInterval(function(){ 
+    $("input#releasetime").trigger("change");
+  },1000);
+  
+function getTimeString(datetime){
+  var hours = datetime.getHours();
+  var minutes = datetime.getMinutes();
+  if(parseInt(hours) < 10){
+    hours = "0" + hours;
+  }
+  if(parseInt(minutes) < 10){
+    minutes = "0" + minutes;
+  }
+  return hours + ":"  + minutes;
+};
+
+function isValidTimeString(timestr){
+  var hours = timestr.split(":")[0];
+  var minutes = timestr.split(":")[1];
+  if(parseInt(hours) >= 0 && parseInt(hours) <= 24 && parseInt(minutes) >= 0 && parseInt(minutes) <=59 ){
+    return true;
+  }
+  return false;
+};
+
+
+  </script>
+</html>

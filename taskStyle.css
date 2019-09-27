@@ -1,0 +1,467 @@
+/*custom font*/
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+
+/*basic reset*/
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    height: 100%;
+    background: #6441A5; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #6441A5, #2a0845); /* Chrome 10-25, Safari 5.1-6 */
+}
+
+body {
+    font-family: montserrat, arial, verdana;
+    background: transparent;
+}
+
+/*form styles*/
+#msform {
+    text-align: center;
+    position: relative;
+    margin-top: 30px;
+}
+
+#msform fieldset {
+    background: white;
+    border: 0 none;
+    border-radius: 0px;
+    box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+    padding: 20px 30px;
+    box-sizing: border-box;
+    width: 80%;
+    margin: 0 10%;
+
+    /*stacking fieldsets above each other*/
+    position: relative;
+}
+
+/*Hide all except first fieldset*/
+#msform fieldset:not(:first-of-type) {
+    display: none;
+}
+
+/*inputs*/
+#msform input, #msform textarea {
+    border-radius: 0px;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: montserrat;
+    color: #2C3E50;
+    font-size: 13px;
+	padding-left:11px;
+}
+
+#msform input:focus, #msform textarea:focus {
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    border: 1px solid #ee0979;
+    outline-width: 0;
+    transition: All 0.5s ease-in;
+    -webkit-transition: All 0.5s ease-in;
+    -moz-transition: All 0.5s ease-in;
+    -o-transition: All 0.5s ease-in;
+}
+
+/*buttons*/
+#msform .action-button {
+    width: 100px;
+    background: #DC2D76;
+    font-weight: bold;
+    color: white;
+    border: 0 none;
+    border-radius: 25px;
+    cursor: pointer;
+    padding: 10px 5px;
+    margin: 10px 5px;
+}
+#msform .btn-color{
+	width: 53px;
+    height: 55px;
+    background: white;
+    font-weight: 600;
+    color: #191919;
+    border: 1px solid darkgrey;
+    font-size: 35px;
+    border-radius: 8px;
+    cursor: pointer;
+    padding: 10px 5px;
+    margin: 10px 5px;
+	font-family: monospace;
+	line-height: 2px;
+}
+
+#msform .size-button{
+	width: 53px;
+    height: 55px;
+    background: white;
+    font-weight: 600;
+    color: #191919;
+    border: 1px solid darkgrey;
+    font-size: 28px;
+    border-radius: 8px;
+    cursor: pointer;
+    padding: 10px 5px;
+    margin: 10px 5px;
+	font-family: lato,sans-serif;
+	line-height: 2px;
+}
+#msform .actives, #msform .size-button:hover, #msform .size-button:focus{
+  background-color: #DC2D76;
+  color: white;
+}
+
+#msform .action-button:hover, #msform .action-button:focus {
+    box-shadow: 0 0 0 2px white, 0 0 0 3px #ee0979;
+}
+
+#msform .action-button-previous {
+    background: white;
+    font-weight: bold;
+    color: #777777;
+    border: 0 none;
+    border-radius: 25px;
+    cursor: pointer;
+    padding: 10px 5px;
+    margin: 10px 5px;
+	position: absolute;
+    top: -10px;
+    left: 14px;
+	font-size: 30px;
+}
+
+/*headings*/
+.fs-title {
+    font-size: 18px;
+    text-transform: uppercase;
+    color: #2C3E50;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+.fs-subtitle {
+    font-weight: normal;
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/*progressbar*/
+#progressbar {
+	display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+    overflow: hidden;
+    /*CSS counters to number the steps*/
+    counter-reset: step;
+	padding-left: 103px;
+}
+
+#progressbar li {
+   list-style-type: none;
+    color: white;
+    text-transform: uppercase;
+    font-size: 9px;
+    width: 33.33%;
+    float: left;
+    position: relative;
+    letter-spacing: 1px;
+    margin-bottom: 18px;
+}
+
+#progressbar li:before {
+    content: counter(step);
+    counter-increment: step;
+    width: 50px;
+    height: 50px;
+    line-height: 48px;
+    display: block;
+    font-size: 27px;
+    color: #C1C1C1;
+    border-radius: 91px;
+    margin: 44px auto 12px auto;
+    background: #FFFFFF;
+}
+
+/*progressbar connectors*/
+#progressbar li:after {
+    content: '';
+    width: 2px;
+    height: 100%;
+    background: #C1C1C1;
+    position: absolute;
+    left: 115%;
+    top: -50%;
+    z-index: -1; /*put it behind the numbers*/
+}
+
+#progressbar li:first-child:after {
+    /*connector not needed before the first step*/
+    content: none;
+}
+
+/*marking active/completed steps green*/
+/*The number of the step and the connector before it = green*/
+#progressbar li.active:before, #progressbar li.active:after {
+    background: #DC2D76;
+    color: white;
+}
+.custom-color-gray-light-v2{
+	color: #aeb2b5;
+	font-weight: 400;
+    font-size: 15px;
+    font-family: lato,sans-serif;
+    line-height: 1.6;
+	float: left;
+}
+.custom-color-black-v1{
+	font-family: inherit;
+	color: inherit;
+	font-weight: 500;
+	margin-bottom: 12px;
+	float:left;
+}
+.image-div{
+	margin-top: 145px;
+}
+.svg-line{
+	height: 70px;
+	margin-left:24px;
+}
+.circle-img-div{
+}
+.circle-image{
+	width: 18px;
+}
+.square-img-div{
+	margin-top: -11px;
+    margin-left: -5px;
+}
+.square-image{
+	width:25px;
+}
+.p-border{
+	border: 1px solid lightgrey;
+	margin-bottom: 34px;
+	height: 80px;
+	
+}
+.label-text{
+	float: left;
+	padding: 11px 11px 0px 11px;
+    font-size: 13px;
+    font-family: montserrat;
+    color: slategrey;
+}
+.input-border{
+	border: none !important;
+}
+.send-multiple{
+	color: #dc2d76 !important;
+    font-weight: 600;
+    font-size: 14px;
+}
+.bold-text-0{
+    color: #9A9A9A;
+    font-size: 18px;
+	font-family: lato,sans-serif;
+}
+.main-div-size{
+	margin-top: 16px;
+    margin-left: 55px;
+}
+.small-size-text{
+	border: 1px solid lightgrey;
+    border-radius: 8px;
+    padding: 22px;
+	width: 112px;
+	margin-left: 68px;
+}
+.small-size-text:hover {
+  background-color: #D92C74;
+}
+.medium-size-text{
+	border: 1px solid lightgrey;
+    border-radius: 8px;
+    padding: 22px;
+	width: 112px;
+	margin-left: 28px;
+}
+.medium-size-text:hover {
+  background-color: #D92C74;
+}
+.large-size-text{
+	border: 1px solid lightgrey;
+    border-radius: 8px;
+    padding: 22px;
+	width: 112px;
+	margin-left: -15px;
+}
+.large-size-text:hover {
+  background-color: #D92C74;
+}
+.sign-div{
+	display: inline-block;
+	border: 1px solid #DC2D76;
+    width: 30px;
+	border-radius: 4px;
+}
+.fa-minus{
+	font-size: 18px;
+    color: #DC2D76; 
+}
+.fa-plus{
+	font-size: 18px;
+    color: #DC2D76; 
+}
+
+#msform .picklater-btn{
+	background: #5A6268;
+    border: 1px solid white;
+    border-radius: 8px;
+    padding: 7px;
+    width: 100px;
+    font-family: lato,sans-serif;
+    font-size: 15px;
+    color: white;
+}
+
+#msform .activ, #msform .picklater-btn:focus{
+  background-color: #DC2D76;
+  color: white;
+}
+#datepicker{
+	width:180px;
+	margin: 0 20px 20px 20px;
+	flex-wrap: nowrap;
+	margin-top: 10px;
+    margin-left: 74px;
+}
+#datepicker > span:hover{
+	cursor: pointer;
+}
+.date-input{
+	background: white !important;
+}
+.input-group-addon{
+	background: #EEEEEE;
+    width: 50px;
+    height: 44px;
+}
+.fa-calendar{
+	margin-top: 10px;
+}
+.clockpicker{
+	width: 150px;
+    flex-wrap: nowrap;
+    margin-top: 10px;
+}
+.clock-input{
+	width:150px !important;
+}
+.span-clock{
+	background: #EEEEEE;
+    width: 50px;
+    height: 44px;
+    padding: 8px;
+}
+.clock-now{
+	flex-wrap: nowrap !important;
+	margin-top: 10px;
+	margin-left: 140px;
+}
+.material-icons{
+    color: #A6A6A6;
+    background: #EEEEEE;
+}
+input[type=time]:disabled {
+  background: #EEEEEE;
+}
+.XL-label{
+	font-family: lato,sans-serif;
+    line-height: 1.6;
+    font-size: .92857rem;
+    color: #5F5F5F;
+}
+.XL-input{
+	width: 194px !important; 
+	padding: 14px;
+    margin-left: 82px;
+}
+.clockpicker-xl{
+	width: 195px;
+    flex-wrap: nowrap;
+    margin-top: 10px;
+	margin-left: 37px;
+}
+#date-xl{
+	width: 197px;
+    margin: 0 20px 20px 20px;
+    flex-wrap: nowrap;
+    margin-top: 10px;
+    margin-left: 83px;
+}
+.fa-calculator{
+	color: #E36497;
+	margin-top: 10px;
+}
+.weight-div{
+     margin-left: 80px;
+}
+.weight-icon{
+	display: inline-block;
+    width: 34px;
+    height: 34px;
+    border-radius: 18px;
+    background: #F4F4F4;
+}
+.weight-text{
+	font-size: 23px;
+    color: #000000;
+    font-family: lato,sans-serif;
+    font-weight: 400;
+    padding-left: 9px;
+}
+.weight-kg{
+	font-weight: 400;
+    font-size: 14px;
+    font-family: lato,sans-serif;
+    color: #bbb!important;
+}
+.dec{
+	position: absolute;
+    right: 285px;
+    width: 32px;
+    height: 30px;
+    border: 1px solid #DC2D76;
+    top: 345px;
+    background: white;
+}
+.inc{
+	position: absolute;
+    right: 240px;
+    width: 32px;
+    height: 30px;
+    border: 1px solid #DC2D76;
+    top: 345px;
+    background: white;
+}
+.num-count{
+	border: none;
+    text-align: center;
+    font-size: 22px !important;
+    font-family: lato,sans-serif !important;
+    color: #999999 !important;
+    margin-left: -12px;
+	background: transparent;
+}
+.packege-txt{
+	margin-left: 44px;
+}
+
+
